@@ -12,16 +12,16 @@ public class Main {
 				"Please input the number corresponding to the option\n"+
 				"1 - Set an Appointment(Venue, Catering, Attire) \n"+
 				"2 - Buy Invitations");
-		int num= scan.nextInt();
-		getResponse(num);
+		String in = scan.nextLine();
+		getResponse(in);
 	}
 
 
-	public static void getResponse(int num){
-		if(num == 1){
+	public static void getResponse(String in){
+		if(in.equals("1")){
 
 		}
-		else if(num == 2){
+		else if(in.equals("2")){
 
 		}
 		else{
@@ -31,8 +31,9 @@ public class Main {
 
 
 	public static void retResponse() {
+		Scanner scan= new Scanner(System.in);
 		System.out.println("other responses");
-		int otherNum = scan.nextInt();
+		//String otherNum = scan.nextLine();
 		
 		
 	}
