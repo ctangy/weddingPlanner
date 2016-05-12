@@ -2,6 +2,6 @@ package weddingPlans;
 
 public interface InvitationCompany {
 	int[] getpackageSize();
-	InvitationCompany getInstance(InvitClient c);
-	int getPrice();
+	NEMRACCards getInstance(InvitClient c);
+	int getPrice(InvitClient c);
 }

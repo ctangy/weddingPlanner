@@ -8,5 +8,5 @@ public interface InvitClient {
 	public static final int GOLD = 2;
 						int SILVER = 1;
 						int BRONZE = 0;
-	ArrayList<String> getNames;
+	ArrayList<String> getNames();
 }
