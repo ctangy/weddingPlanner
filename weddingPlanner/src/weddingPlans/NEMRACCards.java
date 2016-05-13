@@ -1,5 +1,7 @@
 package weddingPlans;
 
+import java.util.ArrayList;
+
 public class NEMRACCards implements InvitationCompany{
 	InvitClient client;
 
@@ -18,16 +20,18 @@ public class NEMRACCards implements InvitationCompany{
 
 	public int getPrice(InvitClient c) {
 		if(c.getDesign() == InvitClient.GOLD){
-			return (int) (1.80 * InvitClient.getQuantity());
+			return (int) (1.80 * InvitClient.getQuantity(false));
 		}
 		if(c.getDesign() == InvitClient.SILVER){
-			return (int) (1.75 * InvitClient.getQuantity());
+			return (int) (1.75 * InvitClient.getQuantity(false));
 		}
 		if(c.getDesign() == InvitClient.BRONZE){
-			return (int) (1.50 * InvitClient.getQuantity());
+			return (int) (1.50 * InvitClient.getQuantity(false));
 		}
 
-
+	public ArrayList<String> getDesignChoices() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

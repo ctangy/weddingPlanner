@@ -41,7 +41,7 @@ public class Main {
 		if (choice == 1) {
 			System.out.println(choice);
 		} else if (choice == 2) { 
-			System.out.println(choice);
+			cardBuying.enterSite);
 		} else {
 			System.out.println("Please enter the valid choice!");
 			makeChoice();
