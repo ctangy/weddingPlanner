@@ -26,9 +26,13 @@ public class cardBuying implements InvitClient {
 					"We only accept multiple of 5's.");
 
 			if(!scanner.hasNextInt()) {
-				System.out.println("Please follow the directions above.");
+				System.out.println("Sorry, we only accept numbers.");
 				getQuantity(print);
 			} 
+			
+			if(numCards % 5 != 0){
+				System.out.println("Sorry, we only accept multiples of 5's");
+			}
 		}
 		return numCards;
 	}
@@ -47,6 +51,7 @@ public class cardBuying implements InvitClient {
 		
 		return null;
 	}
+	
 
 
 
