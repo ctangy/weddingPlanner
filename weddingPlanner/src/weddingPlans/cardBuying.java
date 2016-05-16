@@ -5,17 +5,24 @@ import java.util.Scanner;
 
 public class cardBuying implements InvitClient {
 	int numCards;
-	//NEMRACCards ic = NEMRACCards.getInstance(this);
-	Scanner scanner = new Scanner(System.in);
-
+	 //NEMRACCards ic = NEMRACCards.getInstance(this);
+	static Scanner scanner = new Scanner(System.in);
+	static String location;
+	String date;
+	String time;
+	String[] guests;
 
 	public static void enterSite() {
+		
 		System.out.println("Hi, Welcome to NEMRACCards!\n"+
-				"Our cards are the best"+
-				"No one can contest!");
+				"Our cards are the best\n"+
+				"No one can contest!\n");
 		
 		System.out.println("First off, I would like for you to input all necessary information\n"+
-						"needed to create your invitation.");
+						"needed to create your invitation.\n");
+		
+		System.out.println("Enter the location");
+			location = scanner.nextLine();
 		
 	}
 
@@ -32,6 +39,7 @@ public class cardBuying implements InvitClient {
 			
 			if(numCards % 5 != 0){
 				System.out.println("Sorry, we only accept multiples of 5's");
+				getQuantity(print);
 			}
 		}
 		return numCards;
