@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class cardBuying implements InvitClient {
 	int numCards;
 	 //NEMRACCards ic = NEMRACCards.getInstance(this);
-	static Scanner scanner = new Scanner(System.in);
+	static Scanner scan = new Scanner(System.in);
 	static String location;
 	String date;
 	String time;
@@ -22,17 +22,23 @@ public class cardBuying implements InvitClient {
 						"needed to create your invitation.\n");
 		
 		System.out.println("Enter the location");
-			location = scanner.nextLine();
+			location = scan.nextLine();
+			if(location == null){
+				System.out.println("Blank input, try again");
+				location = scan.nextLine();
+			}else{  
+				System.out.println("Your location is " + location);
+			}
 		
 	}
 
 	public int getQuantity(boolean print) {
 		if(!print){
-			numCards = scanner.nextInt();
+			numCards = scan.nextInt();
 			System.out.println("Please input the amount of Invitation Cards you would like to purchase.\n"+
 					"We only accept multiple of 5's.");
 
-			if(!scanner.hasNextInt()) {
+			if(!scan.hasNextInt()) {
 				System.out.println("Sorry, we only accept numbers.");
 				getQuantity(print);
 			} 
