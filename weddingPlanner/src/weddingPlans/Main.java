@@ -39,7 +39,7 @@ public class Main {
 		int choice = scanner.nextInt();
 
 		if (choice == 1) {
-			System.out.println(choice);
+			Appointments.welcome();
 		} else if (choice == 2) { 
 			cardBuying.enterSite();
 		} else {
@@ -47,7 +47,12 @@ public class Main {
 			makeChoice();
 		}
 	}
-
+	
+	//TODO Have this method return a REAL budget
+	public static Budget returnBudget() {
+		return new AppointmentBudget();
+	}
+	
 }
 
 
