@@ -2,7 +2,7 @@ package weddingPlans;
 
 import java.util.ArrayList;
 
-public class Appointments {
+public class Appointments implements SetAppointment{
 
 	double cost;
 	
@@ -30,6 +30,11 @@ public class Appointments {
 		possibleAppointments.add(new Appointments());
 		System.out.println("Hello, welcome to Appointment-Maker. " +
 				"Your budget is $" + budget);
+	}
+
+	public void setAppointment() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	//getcost -- budget.

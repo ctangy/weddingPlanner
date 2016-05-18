@@ -52,6 +52,9 @@ public class Main {
 				
 				if (choice == 1) {
 					System.out.println(choice);
+					SetAppointment sa = new Appointments();
+					sa.setAppointment();
+					
 				}
 				if (choice == 2) { 
 					cardBuying.enterSite();
