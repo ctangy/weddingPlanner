@@ -2,7 +2,7 @@ package weddingPlans;
 
 import java.util.ArrayList;
 
-public class NEMRACCards implements InvitationCompany{
+public class NEMRACCards{
 	InvitClient client;
 
 	public NEMRACCards( InvitClient c){

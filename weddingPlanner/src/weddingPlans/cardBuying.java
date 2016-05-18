@@ -4,15 +4,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class cardBuying implements InvitClient {
-	int numCards;
-	 //NEMRACCards ic = NEMRACCards.getInstance(this);
+	private int numCards;
 	static Scanner scan = new Scanner(System.in);
 	static String location;
-	String date;
-	String time;
-	String[] guests;
+	private String date;
+	private String time;
+	private String[] guests;
+	// boolean locFirst = false;
 
-	public static void enterSite() {
+	public cardBuying(){
+		enterSite();
+	}
+	public void enterSite() {
 		
 		System.out.println("Hi, Welcome to NEMRACCards!\n"+
 				"Our cards are the best\n"+
@@ -20,15 +23,25 @@ public class cardBuying implements InvitClient {
 		
 		System.out.println("First off, I would like for you to input all necessary information\n"+
 						"needed to create your invitation.\n");
+		inputLocTime(true);
+
 		
+	}
+
+	public void inputLocTime(boolean locFirst) {
+	if(locFirst){
 		System.out.println("Enter the location");
-			location = scan.nextLine();
-			if(location == null){
-				System.out.println("Blank input, try again");
-				location = scan.nextLine();
-			}else{  
-				System.out.println("Your location is " + location);
-			}
+		location = scan.nextLine();
+		if(location.trim().isEmpty()){
+			System.out.println("Blank input, try again");
+			inputLocTime(locFirst);
+		}else{  
+			System.out.println("Your location is " + location); 
+			locFirst = false;
+		}
+		}
+		System.out.println("Enter the date");
+		date = scan.nextLine();
 		
 	}
 
@@ -65,7 +78,14 @@ public class cardBuying implements InvitClient {
 		
 		return null;
 	}
-	
+
+
+	public String getTime() {
+		return date;
+		// TODO Auto-generated method stub
+		
+	}
+
 
 
 
