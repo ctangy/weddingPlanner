@@ -11,11 +11,13 @@ public class budgetTab implements Budget, InvitClient {
 	//Christine
 	static int amount; 
 	public static int budget = 0;
-	public int x = 100;
+	public static int x = 100;
 	static Scanner scanner = new Scanner(System.in);
 	static int decision;
 	public int appointmentPrice = 0;
 	public int invitationPrice = 0;
+	public static double price = 0.0;
+	public static boolean affordable = false;
 
 	public static void welcome(){
 		// calculate budget
@@ -23,7 +25,32 @@ public class budgetTab implements Budget, InvitClient {
 		//if budget is adjusted, needs to save new amount
 		// warn whether are not on budget, below budget, above budget
 		//make sure customer canAffrod invitations, appointments
+		pickChoice();
 
+	}
+	public static void pickChoice(){
+		decideChoice();
+		choiceMade(decision);
+	}
+	public static void decideChoice(){
+		System.out.println("Welcome to your Budget! Here you can adjust your budget," 
+				+"check whether you are on budget,and if you can afford everything you desire! \n"+
+						"Enter a number to decide what you would like to do! \n"+
+						" 1 - Adjust Budget \n"+
+						" 2 - Check Budget \n"+
+						" 3 - Ability to Afford");
+		decision = scanner.nextInt();
+	}
+	public static int choiceMade(int decision){
+		if(decision == 1){
+			adjustBudget();
+		}
+		if(decision == 2){
+			calculateBudget(x, budget);
+		}
+		if(decision == 3){
+			canAfford(price);
+		}
 	}
 
 	public static void calculateBudget(int x, int budget){
@@ -68,8 +95,11 @@ public class budgetTab implements Budget, InvitClient {
 		return budget+amount*multiplier;
 	}
 
-	public boolean canAfford(double price){
-		return false;
+	public void canAfford(double price){
+		if( price == budget){
+			affordable = true;
+		}
+		affordable =  false;
 	}
 
 	public boolean calculatePrice(int x, int budget) {
