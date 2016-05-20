@@ -19,6 +19,7 @@ public class Main {
 			getBudget();
 		} 
 		budget = scanner.nextInt();
+		budgetTab.budget = budget;
 		if(budget > 0){
 		System.out.println("So your budget is $" + budget);
 		System.out.println("Awesome! What would you like to do today?");
@@ -41,7 +42,8 @@ public class Main {
 
 			System.out.println("Please input the number corresponding to the option\n" +
 					"1 - Set an Appointment(Venue, Catering, Attire) \n" +
-					"2 - Buy Invitations");
+					"2 - Buy Invitations \n" +
+					"3 - Access your Budget");
 
 			if(!scanner.hasNextInt()) {
 				count --;
@@ -57,9 +59,10 @@ public class Main {
 					
 				}
 				if (choice == 2) { 
-					 cardBuying ic = new cardBuying();
-					 ic.enterSite();
-
+					cardBuying.enterSite();
+				}
+				if (choice == 3){
+					budgetTab.welcome();
 				}
 
 			
