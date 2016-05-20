@@ -3,7 +3,7 @@ package weddingPlans;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class budgetTab implements Budget, InvitClient {
+public class budgetTab implements InvitClient {
 
 	/**
 	 * @param args
@@ -14,10 +14,10 @@ public class budgetTab implements Budget, InvitClient {
 	public static int x = 100;
 	static Scanner scanner = new Scanner(System.in);
 	static int decision;
-	public int appointmentPrice = 0;
-	public int invitationPrice = 0;
-	public static double price = 0.0;
+	public static int appointmentPrice = 0;
+	public static int invitationPrice = 0;
 	public static boolean affordable = false;
+	public static double price;
 
 	public static void welcome(){
 		// calculate budget
@@ -26,6 +26,10 @@ public class budgetTab implements Budget, InvitClient {
 		// warn whether are not on budget, below budget, above budget
 		//make sure customer canAffrod invitations, appointments
 		pickChoice();
+
+	}
+	public static void thePrice(){
+		price = appointmentPrice + invitationPrice;
 
 	}
 	public static void pickChoice(){
@@ -51,6 +55,7 @@ public class budgetTab implements Budget, InvitClient {
 		if(decision == 3){
 			canAfford(price);
 		}
+		return decision;
 	}
 
 	public static void calculateBudget(int x, int budget){
