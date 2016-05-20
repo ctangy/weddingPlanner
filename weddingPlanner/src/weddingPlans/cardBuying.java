@@ -16,33 +16,33 @@ public class cardBuying implements InvitClient {
 		enterSite();
 	}
 	public void enterSite() {
-		
+
 		System.out.println("Hi, Welcome to NEMRACCards!\n"+
 				"Our cards are the best\n"+
 				"No one can contest!\n");
-		
-		System.out.println("First off, I would like for you to input all necessary information\n"+
-						"needed to create your invitation.\n");
-		inputLocTime(true);
 
-		
+				System.out.println("First off, I would like for you to input all necessary information\n"+
+				"needed to create your invitation.\n");
+				inputLocTime(true);
+
+
 	}
 
 	public void inputLocTime(boolean locFirst) {
-	if(locFirst){
-		System.out.println("Enter the location");
-		location = scan.nextLine();
-		if(location.trim().isEmpty()){
-			System.out.println("Blank input, try again");
-			inputLocTime(locFirst);
-		}else{  
-			System.out.println("Your location is " + location); 
-			locFirst = false;
-		}
+		if(locFirst){
+			System.out.println("Enter the location");
+					location = scan.nextLine();
+					if(location.trim().isEmpty()){
+						System.out.println("Blank input, try again");
+						inputLocTime(locFirst);
+					}else{  
+						System.out.println("Your location is " + location); 
+								locFirst = false;
+					}
 		}
 		System.out.println("Enter the date");
 		date = scan.nextLine();
-		
+
 	}
 
 	public int getQuantity(boolean print) {
@@ -51,15 +51,19 @@ public class cardBuying implements InvitClient {
 			System.out.println("Please input the amount of Invitation Cards you would like to purchase.\n"+
 					"We only accept multiple of 5's.");
 
-			if(!scan.hasNextInt()) {
-				System.out.println("Sorry, we only accept numbers.");
-				getQuantity(print);
-			} 
-			
-			if(numCards % 5 != 0){
-				System.out.println("Sorry, we only accept multiples of 5's");
-				getQuantity(print);
-			}
+					if(!scan.hasNextInt()) {
+						System.out.println
+
+						("Sorry, we only accept numbers.");
+						getQuantity(print);
+					} 
+
+					if(numCards % 5 != 0){
+						System.out.println
+
+						("Sorry, we only accept multiples of 5's");
+						getQuantity(print);
+					}
 		}
 		return numCards;
 	}
@@ -74,8 +78,10 @@ public class cardBuying implements InvitClient {
 		return null;
 	}
 
-	public ArrayList<String> getGeneralInformation() {
-		
+	public ArrayList<String> 
+
+	getGeneralInformation() {
+
 		return null;
 	}
 
@@ -83,7 +89,7 @@ public class cardBuying implements InvitClient {
 	public String getTime() {
 		return date;
 		// TODO Auto-generated method stub
-		
+
 	}
 
 
