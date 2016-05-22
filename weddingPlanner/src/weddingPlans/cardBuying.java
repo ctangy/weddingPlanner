@@ -1,13 +1,25 @@
 package weddingPlans;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class cardBuying implements InvitClient {
 	private int numCards;
-	static Scanner scan = new Scanner(System.in);
-	static String location;
+	Scanner scan = new Scanner(System.in);
+	DateFormat format = new SimpleDateFormat("MM-dd-yyyy");
+	Date today = new Date();
+	private String location;
 	private String date;
+	Calendar dow = Calendar.getInstance();
+	//private String month;
+	//private String day;
+	//private String year;
 	private String time;
 	private String[] guests;
 	// boolean locFirst = false;
@@ -24,11 +36,12 @@ public class cardBuying implements InvitClient {
 				System.out.println("First off, I would like for you to input all necessary information\n"+
 				"needed to create your invitation.\n");
 				inputLocTime(true);
+				
 
 
 	}
 
-	public void inputLocTime(boolean locFirst) {
+	public void inputLocTime(boolean locFirst){
 		if(locFirst){
 			System.out.println("Enter the location");
 					location = scan.nextLine();
@@ -39,11 +52,25 @@ public class cardBuying implements InvitClient {
 						System.out.println("Your location is " + location); 
 								locFirst = false;
 					}
-		}
-		System.out.println("Enter the date");
-		date = scan.nextLine();
-
-	}
+			}
+					System.out.println("Input the date in the format (MM/DD/YYYY");
+					System.out.println("For example, it is now " + format.format(new Date()));
+					Date date = null;
+					while (date == null) {
+					    String line = scan.nextLine();
+					    try {
+					        date = format.parse(line);
+					        if(today.compareTo(date)<0){
+					        	System.out.println(date);
+					        	
+					        }
+					    } catch (ParseException e) {
+					        System.out.println("Sorry, that's not valid. Please try again.");
+					    }
+					}
+					
+		
+}
 
 	public int getQuantity(boolean print) {
 		if(!print){
@@ -87,7 +114,7 @@ public class cardBuying implements InvitClient {
 
 
 	public String getTime() {
-		return date;
+		return null;
 		// TODO Auto-generated method stub
 
 	}

@@ -18,16 +18,18 @@ public class NEMRACCards{
 		return new NEMRACCards(c);
 	}
 
-	public int getPrice(InvitClient c) {
+	public void getPrice(InvitClient c) {
 		if(c.getDesign() == InvitClient.GOLD){
-			return (int) (1.80 * InvitClient.getQuantity(false));
+			 System.out.println(1.80 * c.getQuantity(false));
 		}
 		if(c.getDesign() == InvitClient.SILVER){
-			return (int) (1.75 * InvitClient.getQuantity(false));
+			System.out.println(1.75 * c.getQuantity(false));
 		}
 		if(c.getDesign() == InvitClient.BRONZE){
-			return (int) (1.50 * InvitClient.getQuantity(false));
+			System.out.println(1.50 * c.getQuantity(false));
 		}
+		System.out.println("Incorrect Input.");;
+	}	
 
 	public ArrayList<String> getDesignChoices() {
 		// TODO Auto-generated method stub

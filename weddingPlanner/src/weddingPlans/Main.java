@@ -59,7 +59,9 @@ public class Main {
 					
 				}
 				if (choice == 2) { 
-					cardBuying.enterSite();
+					 cardBuying ic = new cardBuying();
+					 ic.enterSite();
+
 				}
 				if (choice == 3){
 					budgetTab.welcome();
