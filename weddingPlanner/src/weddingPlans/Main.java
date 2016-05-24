@@ -64,7 +64,8 @@ public class Main {
 
 				}
 				if (choice == 3){
-					budgetTab.welcome();
+					budgetTab b = new budgetTab();
+					b.welcome();
 				}
 
 			
