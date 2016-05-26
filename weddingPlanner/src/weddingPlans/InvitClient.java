@@ -12,6 +12,8 @@ public interface InvitClient {
 						int BRONZE = 0;
 	ArrayList<String> getNames();
 	void inputLocTime(boolean locFirst);
+	void inputWedNames(boolean groomFirst);
+	void conNames(boolean questions);
 	String getTime();
 	ArrayList<String> getGeneralInformation();
 }
