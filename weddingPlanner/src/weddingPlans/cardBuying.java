@@ -18,13 +18,10 @@ public class cardBuying implements InvitClient {
 	private String bride;
 	private String location;
 	private String date;
-	//Calendar dow = Calendar.getInstance();
-	//private String month;
-	//private String day;
-	//private String year;
 	private String time;
 	private String[] guests;
 	// boolean locFirst = false;
+
 
 	public cardBuying(){
 		enterSite();
@@ -52,20 +49,19 @@ public class cardBuying implements InvitClient {
 			groom = scan.nextLine();
 			if(groom.trim().isEmpty()){
 				System.out.println("Invalid input, the groom can't have a blank name.");
-				inputLocTime(groomFirst);
+				inputWedNames(groomFirst);
 				}
 			}
 			System.out.println("What is the bride's name?");
 			bride = scan.nextLine();
 			if(bride.trim().isEmpty()){
 				System.out.println("Invalid input, the bride can't have a blank name.");
-				inputLocTime(false);
+				inputWedNames(false);
 				}
 			if(bride.equals(groom)){
 				System.out.println("Wow, the groom and the bride have the same names!");
 			}
 		
-			
 		} 
 		
 		
@@ -77,17 +73,23 @@ public class cardBuying implements InvitClient {
 					"\n1 - Continue "+
 					"\n2 - Revise names");
 		}
-		confirm = scan.nextInt();
+		
 		if(!scan.hasNextInt()) {
 			System.out.println("Please enter a number!");
 			conNames(false);
 		}
+		confirm = scan.nextInt();
 		if(confirm == 1){
 			inputLocTime(true);
 		}
 		if(confirm == 2){
+			System.out.println("Please revise the names");
 			inputWedNames(true);
 		}
+//		else{
+//			System.out.println("Invalid.");
+//			conNames(true);
+//		}
 	}
 		
 		
@@ -100,31 +102,36 @@ public class cardBuying implements InvitClient {
 						System.out.println("Blank input, try again");
 						inputLocTime(locFirst);
 					}else if(Pattern.matches("[a-zA-Z]+", location)){  
-						System.out.println("Your location is " + location); 
+						System.out.println("Your location is: " + location); 
 								locFirst = false;
 					}
 					else{System.out.println("Your location can't contain numbers.");
 					inputLocTime(true);
 					}
+					
 			}
 					System.out.println("Input the date in the format (MM/DD/YYYY)\n"+
-							"We are currently not accepting any dates before 06-04-2016");
+							"We are currently not accepting any dates before 06-07-2016");
 					System.out.println("Ex: Today is " + format.format(new Date()));
 					Date date = null;
 					while (date == null) {
 					    String line = scan.nextLine();
 					    try {
 					        date = format.parse(line);
-					        Date limit = format.parse("06-04-2016");
+					        Date limit = format.parse("06-07-2016");
 					        if(date.compareTo(limit)<= 0){
 					        	System.out.println("Invalid date");
 					        	inputLocTime(false);
+					        }
+					        if(date.compareTo(limit) >0){
+					        	System.out.println("worked");
 					        }
 					        
 					    } catch (ParseException e) {
 					        System.out.println("Sorry, that's not valid. Please try again.");
 					    }
-					}
+					}getQuantity(true);
+					
 }
 
 	public int getQuantity(boolean print) {
@@ -149,29 +156,19 @@ public class cardBuying implements InvitClient {
 		}
 		return numCards;
 	}
-
 	public int getDesign() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
+	public String getTime() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	public ArrayList<String> getNames() {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	public ArrayList<String> 
-
-	getGeneralInformation() {
-
-		return null;
-	}
-
-
-	public String getTime() {
-		return null;
-		// TODO Auto-generated method stub
-
 	}
 
 

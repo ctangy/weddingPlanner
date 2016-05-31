@@ -10,10 +10,9 @@ public interface InvitClient {
 	public static final int GOLD = 2;
 						int SILVER = 1;
 						int BRONZE = 0;
-	ArrayList<String> getNames();
 	void inputLocTime(boolean locFirst);
 	void inputWedNames(boolean groomFirst);
 	void conNames(boolean questions);
 	String getTime();
-	ArrayList<String> getGeneralInformation();
+	//ArrayList<String> getGeneralInformation();
 }
