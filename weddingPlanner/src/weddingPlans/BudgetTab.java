@@ -3,7 +3,7 @@ package weddingPlans;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BudgetTab implements InvitationCompany {
+public class BudgetTab implements InvitationCompany, Cost2 {
 
 	/**
 	 * @param args
@@ -11,9 +11,10 @@ public class BudgetTab implements InvitationCompany {
 	//Christine
 	static int amount; 
 	public static int appointmentPrice = 0;
-	public static int invitationPrice = 0;//getPrice(InvitClient c);
+	public static int invitationPrice = 0;
+	//getPrice(InvitClient c);
 	static int budget = 0;	
-	public static int x = appointmentPrice + invitationPrice;
+	public static int total = Cost.cost();
 	static Scanner scanner = new Scanner(System.in);
 	static int decision;
 	public static boolean affordable = false;
@@ -29,14 +30,14 @@ public class BudgetTab implements InvitationCompany {
 		//if budget is adjusted, needs to save new amount
 		// warn whether are not on budget, below budget, above budget
 		//make sure customer canAffrod invitations, appointments
-		cost();
+		//cost();
 		pickChoice();
 	}
-	public static void cost(){
-		appointmentPrice = 100;
-		invitationPrice = 100;
-		x = appointmentPrice + invitationPrice;
-	}
+//	public static void cost(){
+//		appointmentPrice = 100;
+//		invitationPrice = 100;
+//		x = appointmentPrice + invitationPrice;
+//	}
 	public static void pickChoice(){
 		decideChoice();
 		choiceMade(decision);
@@ -55,7 +56,7 @@ public class BudgetTab implements InvitationCompany {
 			adjustBudget();
 		}
 		if(decision == 2){
-			calculateBudget(x, budget);
+			calculateBudget(total, budget);
 		}
 		if( decision == 3){
 			Main.main(null);
@@ -63,16 +64,16 @@ public class BudgetTab implements InvitationCompany {
 		return decision;
 	}
 
-	public static void calculateBudget(int x, int budget){
+	public static void calculateBudget(int total, int budget){
 		System.out.println( " Your budget is $"+ budget+".");
-		if(x == budget){
+		if(total == budget){
 			System.out.println("You are right on budget, no more, no less!");
 		}
-		if(budget < x){
-			System.out.println("You are below budget! You still have $"+ (x-budget) + " left!" );
+		if(budget > total){
+			System.out.println("You are below budget! You still have $"+ (budget-total) + " left!" );
 		}
-		if(budget > x){
-			System.out.println("You are above budget! You are over by $" + (budget-x)+"!");
+		if(budget < total){
+			System.out.println("You are above budget! You are over by $" + (total-budget)+"!");
 		}
 	}
 
@@ -174,6 +175,17 @@ public class BudgetTab implements InvitationCompany {
 	}
 
 	public int getPrice(InvitClient c) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void cost() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public int cost(int x) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
