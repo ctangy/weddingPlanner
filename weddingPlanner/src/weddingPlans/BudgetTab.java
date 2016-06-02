@@ -3,7 +3,7 @@ package weddingPlans;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class budgetTab implements InvitationCompany {
+public class BudgetTab implements InvitationCompany {
 
 	/**
 	 * @param args
@@ -12,14 +12,14 @@ public class budgetTab implements InvitationCompany {
 	static int amount; 
 	public static int appointmentPrice = 0;
 	public static int invitationPrice = 0;//getPrice(InvitClient c);
-	public static int budget = 0;
+	static int budget = 0;	
 	public static int x = appointmentPrice + invitationPrice;
 	static Scanner scanner = new Scanner(System.in);
 	static int decision;
 	public static boolean affordable = false;
 	public static double price = appointmentPrice + invitationPrice;
 	
-	public budgetTab(){
+	public BudgetTab(){
 		welcome();
 	}
 
@@ -47,8 +47,7 @@ public class budgetTab implements InvitationCompany {
 				" Your budget right now is $"+ budget + "! \n"+
 						"Enter a number to decide what you would like to do! \n"+
 						" 1 - Adjust Budget \n"+
-						" 2 - Check Budget \n"+
-						" 3 - Go Back to Main \n");
+						" 2 - Check Budget \n");
 		decision = scanner.nextInt();
 	}
 	public static int choiceMade(int decision){
@@ -65,16 +64,15 @@ public class budgetTab implements InvitationCompany {
 	}
 
 	public static void calculateBudget(int x, int budget){
-		//for loop?
 		System.out.println( " Your budget is $"+ budget+".");
 		if(x == budget){
 			System.out.println("You are right on budget, no more, no less!");
 		}
-		if(budget > x){
-			System.out.println("You are below budget! You still have $"+ (budget-x) + " left!" );
-		}
 		if(budget < x){
-			System.out.println("You are above budget! You are over by $" + (x-budget)+"!");
+			System.out.println("You are below budget! You still have $"+ (x-budget) + " left!" );
+		}
+		if(budget > x){
+			System.out.println("You are above budget! You are over by $" + (budget-x)+"!");
 		}
 	}
 
@@ -96,15 +94,19 @@ public class budgetTab implements InvitationCompany {
 
 		if(decision== 2){
 			word = "decrease";
-			multiplier=-1;
 		}
-		System.out.println("You selected to "+word+" budget! Please enter the amount you"+
+		System.out.println("You selected to "+word+" budget! Please enter the amount you "+
 				"would like to "+word+" it by:(eg. 100,150)");
-
-		amount = scanner.nextInt();
-		budget = budget + amount;
+		if( word == "increase"){
+			amount = scanner.nextInt();
+			budget = budget+amount;
+		}
+		if( word != "increase"){
+			amount = scanner.nextInt();
+			budget = budget-amount;
+		}
 		System.out.println("Your new budget is now $"+ budget+ "!");
-		return budget+amount*multiplier;
+		return multiplier;
 	}
 
 	public void canAfford(double price){

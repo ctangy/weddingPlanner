@@ -14,15 +14,17 @@ public class Appointments implements Budget{
 		//add to time on schedule
 		//adjust budget
 	}
-	
+	public Appointments(){
+		welcome();
+	}
 	public static void welcome() {
 		int budget = Main.returnBudget();
 		
 		//ArrayList<Appointments> possibleAppointments = new ArrayList<Appointments>();
 		//possibleAppointments.add(new Appointments());
 		
-		System.out.println("Hello, welcome to Appointment-Maker. " +
-				"Your budget is $" + budget);
+		System.out.println("Hello, welcome to Appointment-Maker. "+
+					"Your budget is $" + budget);
 		
 		dressAndTimes();
 	}

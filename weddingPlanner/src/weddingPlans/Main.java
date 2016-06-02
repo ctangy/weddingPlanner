@@ -19,7 +19,7 @@ public class Main {
 			getBudget();
 		} 
 		budget = scanner.nextInt();
-		budgetTab.budget = budget;
+		BudgetTab.budget = budget;
 		if(budget > 0){
 		System.out.println("So your budget is $" + budget);
 		System.out.println("Awesome! What would you like to do today?");
@@ -50,6 +50,7 @@ public class Main {
 				choice = scanner.nextInt();
 				
 				if (choice == 1) {
+					Appointments appt = new Appointments();
 					Appointments.welcome();
 					
 				}
@@ -59,7 +60,7 @@ public class Main {
 
 				}
 				if (choice == 3){
-					budgetTab b = new budgetTab();
+					BudgetTab b = new BudgetTab();
 					b.welcome();
 				}
 
