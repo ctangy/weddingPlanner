@@ -48,7 +48,8 @@ public class BudgetTab implements InvitationCompany, Cost2 {
 				" Your budget right now is $"+ budget + "! \n"+
 						"Enter a number to decide what you would like to do! \n"+
 						" 1 - Adjust Budget \n"+
-						" 2 - Check Budget \n");
+						" 2 - Check Budget \n" +
+						" 3 - Menu");
 		decision = scanner.nextInt();
 	}
 	public static int choiceMade(int decision){
@@ -59,7 +60,7 @@ public class BudgetTab implements InvitationCompany, Cost2 {
 			calculateBudget(total, budget);
 		}
 		if( decision == 3){
-			Main.main(null);
+			Main.makeChoice();
 		}
 		return decision;
 	}
