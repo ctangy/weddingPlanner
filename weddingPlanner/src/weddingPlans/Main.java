@@ -27,13 +27,10 @@ public class Main {
 		}
 
 	}
-
-
-
 	
 	//TODO Have this method return a REAL budget
-	public static Budget returnBudget() {
-		return new AppointmentBudget();
+	public static int returnBudget() {
+		return budget;
 	}
 
 	public static void makeChoice() {
@@ -53,9 +50,7 @@ public class Main {
 				choice = scanner.nextInt();
 				
 				if (choice == 1) {
-					System.out.println(choice);
-					SetAppointment sa = new Appointments();
-					sa.setAppointment();
+					Appointments.welcome();
 					
 				}
 				if (choice == 2) { 
@@ -74,8 +69,7 @@ public class Main {
 			System.out.println("Sorry, we do not tolerate spam\n"+
 					"We will now restart the program.\n");
 			main(null);
-			
-		
+					
 	}	
 
 }
