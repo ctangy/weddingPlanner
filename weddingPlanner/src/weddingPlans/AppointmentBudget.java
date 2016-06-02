@@ -15,8 +15,14 @@ public class AppointmentBudget implements Budget{
 		
 	}
 	
-	public boolean canAfford(double price){
-		return true;
+	public void canAfford(double price){
+
+	}
+
+
+	public boolean calculatePrice(int x, int budget) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

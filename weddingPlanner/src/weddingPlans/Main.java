@@ -50,7 +50,8 @@ public class Main {
 				choice = scanner.nextInt();
 				
 				if (choice == 1) {
-					Appointments.welcome();
+					Appointments ap = new Appointments();
+					ap.welcome();
 					
 				}
 				if (choice == 2) { 
