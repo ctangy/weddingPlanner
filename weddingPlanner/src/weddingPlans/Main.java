@@ -50,7 +50,6 @@ public class Main {
 				choice = scanner.nextInt();
 				
 				if (choice == 1) {
-					Appointments appt = new Appointments();
 					Appointments.welcome();
 					
 				}
