@@ -12,7 +12,7 @@ public interface InvitClient {
 						int BRONZE = 0;
 	void inputLocTime(boolean locFirst);
 	void inputWedNames(boolean groomFirst);
-	void conNames(boolean questions);
-	String getTime();
+	void conNames();
+	//String getTime();
 	//ArrayList<String> getGeneralInformation();
 }
