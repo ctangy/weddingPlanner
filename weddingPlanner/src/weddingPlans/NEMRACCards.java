@@ -19,7 +19,7 @@ public class NEMRACCards{
 	}
 
 	public ArrayList<String> getDesignChoices() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 

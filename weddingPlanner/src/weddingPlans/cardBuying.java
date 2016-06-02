@@ -240,7 +240,6 @@ public class cardBuying implements InvitClient,Budget{
 			System.out.println("lol, you can't afford this. You only have $" + budget +
 					"\nCome back when you have money."
 					);
-			
 			System.exit(0);
 		}
 		

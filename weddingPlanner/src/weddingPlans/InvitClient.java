@@ -13,6 +13,4 @@ public interface InvitClient {
 	void inputLocTime(boolean locFirst);
 	void inputWedNames(boolean groomFirst);
 	void conNames();
-	//String getTime();
-	//ArrayList<String> getGeneralInformation();
 }
