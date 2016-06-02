@@ -12,11 +12,11 @@ public class AppointmentBudget implements Budget{
 	 * @param args
 	 */
 	public AppointmentBudget() {
-		
+
 	}
 	
 	public void canAfford(double price){
-
+		
 	}
 
 
